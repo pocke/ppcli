@@ -1,0 +1,33 @@
+#!ruby
+
+require 'pp'
+require 'auto_require'
+
+r = false
+requires = []
+args = ARGV.map do |arg|
+  if r
+    requires << arg
+    r = false
+    next
+  end
+  r = false
+
+  if arg =~ /\A-r(.+)\z/
+    requires << $1
+    next
+  elsif arg == '-r'
+    r = true
+    nil
+  else
+    arg
+  end
+end.compact
+
+requires.each do |lib|
+  require lib
+end
+
+args.each do |arg|
+  pp eval arg
+end
