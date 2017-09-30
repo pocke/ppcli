@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{PPCLI is a CLI tool for pp.}
   spec.description   = %q{PPCLI is a CLI tool for pp.}
   spec.homepage      = "https://github.com/pocke/ppcli"
+  spec.license       = 'Apache-2.0'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
