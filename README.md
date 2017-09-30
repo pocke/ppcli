@@ -1,8 +1,7 @@
-# Ppcli
+# PPCLI
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ppcli`. To experiment with that code, run `bin/console` for an interactive prompt.
+`pp something` in Terminal.
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -22,7 +21,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Basic usage:
+
+```bash
+$ pp '1 + 1'
+2
+```
+
+Advanced usage:
+
+ppcli requires standard library automatically(see [https://github.com/pocke/equire](https://github.com/pocke/equire) ).
+
+```bash
+$ pp 'Ripper.lex("Hello world!")'
+[[[1, 0], :on_const, "Hello"],
+ [[1, 5], :on_sp, " "],
+ [[1, 6], :on_ident, "world!"]]
+```
 
 ## Development
 
